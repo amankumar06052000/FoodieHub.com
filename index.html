@@ -38,6 +38,7 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
+
 <body class="bg-gray-100 dark:bg-gray-900 font-sans transition duration-300">
 
   <!-- ================= NAVBAR ================= -->
@@ -52,6 +53,8 @@
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-8 text-gray-600 dark:text-gray-300">
         <a href="#home" class="hover:text-orange-500 transition">Home</a>
+
+        <!-- Dropdown -->
         <div class="relative group">
           <button class="hover:text-orange-500 transition">Our Services ▾</button>
           <div
@@ -61,6 +64,7 @@
             <a href="#momos" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Momos</a>
           </div>
         </div>
+
         <a href="#reviews" class="hover:text-orange-500 transition">Reviews</a>
         <a href="#about" class="hover:text-orange-500 transition">About Us</a>
         <a href="#contact" class="hover:text-orange-500 transition">Contact Us</a>
@@ -68,11 +72,16 @@
 
       <!-- Right Side -->
       <div class="flex items-center space-x-4">
+        <!-- Dark Mode Toggle -->
         <button onclick="toggleDarkMode()" id="themeIcon" class="text-xl dark:text-white">🌙</button>
+
+        <!-- Login -->
         <button
           class="hidden md:block bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
           LOGIN
         </button>
+
+        <!-- Mobile Menu -->
         <button onclick="toggleMenu()" class="md:hidden text-2xl dark:text-white">☰</button>
       </div>
     </div>
@@ -98,137 +107,203 @@
     </div>
   </nav>
 
-  <!-- ================= HERO ================= -->
-  <section id="home" class="max-w-7xl mx-auto grid md:grid-cols-2 items-center px-6 py-16 gap-10">
-    <div data-aos="fade-right">
-      <h2 class="text-3xl font-bold mb-4 dark:text-white">
-        <span id="typing"></span>
-      </h2>
-      <p class="text-gray-600 dark:text-gray-300 mb-6">
-        Delicious pizza made with fresh ingredients and authentic taste.
+ <!-- ================= HERO ================= -->
+<section id="home" class="max-w-7xl mx-auto grid md:grid-cols-2 items-center px-6 py-16 gap-10">
+  <div data-aos="fade-right" class="group transition-transform duration-500 transform hover:scale-105 active:scale-95">
+    <h2 class="text-3xl font-bold mb-4 dark:text-white">
+      <span id="typing"></span>
+    </h2>
+    <p class="text-gray-600 dark:text-gray-300 mb-6">
+      Delicious pizza made with fresh ingredients and authentic taste.
+    </p>
+    <button class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 
+                    hover:scale-105 transform transition duration-500 ease-in-out active:scale-95">
+      Order Pizza Now
+    </button>
+  </div>
+
+  <div data-aos="fade-left" class="group transition-transform duration-500 transform hover:scale-105 active:scale-95">
+    <img src="image/Hero-pizza.webp" alt="Freshly baked pizza"
+      class="rounded-3xl shadow-xl w-full transition-transform duration-500 group-hover:scale-105">
+  </div>
+</section>
+
+<!-- ================= FOOD CATEGORIES ================= -->
+<section id="categories" class="py-16 bg-gray-100 dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-red-500" data-aos="fade-up">Our Popular Categories</h2>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 text-center">
+
+      <!-- Item 1 -->
+      <div class="group transition-transform duration-500 transform hover:scale-110 active:scale-95" data-aos="zoom-in">
+        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transition-transform duration-500">
+          <img src="image/Hero-pizza.webp" alt="Pizza" class="w-full h-full object-cover">
+        </div>
+        <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Pizza</h4>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="group transition-transform duration-500 transform hover:scale-110 active:scale-95" data-aos="zoom-in" data-aos-delay="100">
+        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transition-transform duration-500">
+          <img src="image/Burger.webp" alt="Burger" class="w-full h-full object-cover">
+        </div>
+        <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Burger</h4>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="group transition-transform duration-500 transform hover:scale-110 active:scale-95" data-aos="zoom-in" data-aos-delay="200">
+        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transition-transform duration-500">
+          <img src="image/Momos.webp" alt="Momos" class="w-full h-full object-cover">
+        </div>
+        <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Momos</h4>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="group transition-transform duration-500 transform hover:scale-110 active:scale-95" data-aos="zoom-in" data-aos-delay="300">
+        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transition-transform duration-500">
+          <img src="image/Fries.webp" alt="Fries" class="w-full h-full object-cover">
+        </div>
+        <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Fries</h4>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="group transition-transform duration-500 transform hover:scale-110 active:scale-95" data-aos="zoom-in" data-aos-delay="400">
+        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transition-transform duration-500">
+          <img src="image/Drinks.webp" alt="Drinks" class="w-full h-full object-cover">
+        </div>
+        <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Drinks</h4>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="group transition-transform duration-500 transform hover:scale-110 active:scale-95" data-aos="zoom-in" data-aos-delay="500">
+        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transition-transform duration-500">
+          <img src="image/Desserts.webp" alt="Desserts" class="w-full h-full object-cover">
+        </div>
+        <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Desserts</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- ================= ABOUT ================= -->
+<section id="about" class="py-20 bg-white dark:bg-gray-800">
+  <div class="text-center mb-14" data-aos="fade-up">
+    <h2 class="text-red-500 font-bold text-3xl">About Us</h2>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Image Card -->
+    <div data-aos="fade-right" class="group transition-transform duration-500 transform hover:scale-105 active:scale-105 focus:scale-105">
+      <img src="image/About.burger.webp" alt="About Us" class="rounded-2xl shadow-lg w-full transition-transform duration-500 group-hover:scale-105">
+    </div>
+
+    <!-- Text Content -->
+    <div data-aos="fade-left" class="group transition-transform duration-500 transform hover:scale-105 active:scale-105 focus:scale-105">
+      <h3 class="text-3xl font-bold mb-4 dark:text-white">Pizza, Burger, and Fries</h3>
+      <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+        High quality food delivered with care and hygiene.
+        We provide the best taste with premium ingredients.
+        Our chefs prepare every meal with passion and perfection.
       </p>
       <button
-        class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 hover:scale-105 transform transition duration-500 ease-in-out">
-        Order Pizza Now
+        class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition transform hover:scale-105 active:scale-95">
+        Learn More
       </button>
     </div>
 
-    <div data-aos="fade-left" class="group">
-      <img src="image/Hero-pizza.webp" alt="Freshly baked pizza"
-        class="rounded-3xl shadow-xl w-full transform transition duration-500 group-hover:scale-105">
-    </div>
-  </section>
-
-  <!-- ================= FOOD CATEGORIES ================= -->
-  <section id="categories" class="py-16 bg-gray-100 dark:bg-gray-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-red-500" data-aos="fade-up">Our Popular Categories</h2>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 text-center">
-        <!-- Category 1 -->
-        <div class="group" data-aos="zoom-in">
-          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transform transition duration-500 group-hover:scale-105">
-            <img src="image/Hero-pizza.webp" alt="Pizza"
-              class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
-          </div>
-          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Pizza</h4>
-        </div>
-        <!-- Category 2 -->
-        <div class="group" data-aos="zoom-in" data-aos-delay="100">
-          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transform transition duration-500 group-hover:scale-105">
-            <img src="image/Burger.webp" alt="Burger"
-              class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
-          </div>
-          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Burger</h4>
-        </div>
-        <!-- Category 3 -->
-        <div class="group" data-aos="zoom-in" data-aos-delay="200">
-          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md transform transition duration-500 group-hover:scale-105">
-            <img src="image/Momos.webp" alt="Momos"
-              class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
-          </div>
-          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Momos</h4>
-        </div>
-        <!-- Add more categories similarly -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ABOUT ================= -->
-  <section id="about" class="py-20 bg-white dark:bg-gray-800">
-    <div class="text-center mb-14" data-aos="fade-up">
-      <h2 class="text-red-500 font-bold text-3xl">About Us</h2>
-    </div>
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-      <div data-aos="fade-right" class="group">
-        <img src="image/About.burger.webp" alt="About Us"
-          class="rounded-2xl shadow-lg w-full transform transition duration-500 group-hover:scale-105">
-      </div>
-      <div data-aos="fade-left">
-        <h3 class="text-3xl font-bold mb-4 dark:text-white">Pizza, Burger, and Fries</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-          High quality food delivered with care and hygiene. We provide the best taste with premium ingredients. Our
-          chefs prepare every meal with passion and perfection.
-        </p>
-        <button
-          class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
-          Learn More
-        </button>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <!-- ================= SERVICES ================= -->
-  <section id="services" class="py-16 bg-gray-100 dark:bg-gray-900">
-    <h2 class="text-center text-red-500 font-bold text-3xl mb-12" data-aos="fade-up">Our Services</h2>
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-      <!-- Service 1 -->
-      <div
-        class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center transform transition duration-500 group hover:scale-105"
-        data-aos="fade-up">
-        <img src="image/Burger.webp" alt="Cheese Burger"
-          class="rounded-xl mb-4 w-full h-56 object-cover transform transition duration-500 group-hover:scale-105">
-        <h3 class="text-xl font-semibold dark:text-white mb-2">Cheese Burger</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-          Juicy grilled burger with fresh vegetables and premium cheese.
-        </p>
-        <button
-          class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
-          Order Now
-        </button>
+<section id="services" class="py-16 bg-gray-100 dark:bg-gray-900">
+  <h2 class="text-center text-red-500 font-bold text-3xl mb-12" data-aos="fade-up">Our Services</h2>
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+
+    <!-- Card 1 -->
+    <div
+      class="group bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center transition transform hover:scale-105 active:scale-105 focus:scale-105 hover:shadow-xl"
+      data-aos="fade-up">
+      <img src="image/Burger.webp" alt="Cheese Burger" class="rounded-xl mb-4 w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
+      <h3 class="text-xl font-semibold dark:text-white mb-2">Cheese Burger</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+        Juicy grilled burger with fresh vegetables and premium cheese.
+      </p>
+      <button
+        class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
+        Order Now
+      </button>
+    </div>
+
+    <!-- Card 2 -->
+    <div
+      class="group bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center transition transform hover:scale-105 active:scale-105 focus:scale-105 hover:shadow-xl"
+      data-aos="fade-up" data-aos-delay="100">
+      <img src="image/Hero-pizza.webp" alt="Freshly baked pizza" class="rounded-xl mb-4 w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
+      <h3 class="text-xl font-semibold dark:text-white mb-2">Freshly Pizza</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+        Hot and crispy pizza topped with fresh ingredients and cheese.
+      </p>
+      <button
+        class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
+        Order Now
+      </button>
+    </div>
+
+    <!-- Card 3 -->
+    <div
+      class="group bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center transition transform hover:scale-105 active:scale-105 focus:scale-105 hover:shadow-xl"
+      data-aos="fade-up" data-aos-delay="200">
+      <img src="image/Momos.webp" alt="Steamed Momos" class="rounded-xl mb-4 w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105">
+      <h3 class="text-xl font-semibold dark:text-white mb-2">Steamed Momos</h3>
+      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+        Soft and delicious momos served with spicy special sauce.
+      </p>
+      <button
+        class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
+        Order Now
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section id="why-choose-us" class="py-20 bg-white dark:bg-gray-800">
+    <h2 class="text-center text-red-500 font-bold text-3xl mb-12" data-aos="fade-up">Why Choose Us</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 text-center">
+      <div class="p-6" data-aos="fade-up">
+        <div class="text-5xl mb-4">🍔</div>
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Fresh Ingredients</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">We use only high-quality and fresh ingredients in every
+          meal.</p>
       </div>
-      <!-- Service 2 -->
-      <div
-        class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center transform transition duration-500 group hover:scale-105"
-        data-aos="fade-up" data-aos-delay="100">
-        <img src="image/Hero-pizza.webp" alt="Freshly baked pizza"
-          class="rounded-xl mb-4 w-full h-56 object-cover transform transition duration-500 group-hover:scale-105">
-        <h3 class="text-xl font-semibold dark:text-white mb-2">Freshly Pizza</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-          Hot and crispy pizza topped with fresh ingredients and cheese.
+      <div class="p-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-5xl mb-4">🚚</div>
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Fast Delivery</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Get your food delivered quickly and safely at your doorstep.
         </p>
-        <button
-          class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
-          Order Now
-        </button>
       </div>
-      <!-- Service 3 -->
-      <div
-        class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center transform transition duration-500 group hover:scale-105"
-        data-aos="fade-up" data-aos-delay="200">
-        <img src="image/Momos.webp" alt="Steamed Momos"
-          class="rounded-xl mb-4 w-full h-56 object-cover transform transition duration-500 group-hover:scale-105">
-        <h3 class="text-xl font-semibold dark:text-white mb-2">Steamed Momos</h3>
-        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-          Soft and delicious momos served with spicy special sauce.
-        </p>
-        <button
-          class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
-          Order Now
-        </button>
+      <div class="p-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-5xl mb-4">⭐</div>
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Best Quality</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Our chefs prepare every dish with care and perfection.</p>
       </div>
     </div>
+  </section>
+
+  <!-- ================= SPECIAL OFFER ================= -->
+  <section id="special-offer" class="py-20 bg-orange-500 text-white text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Get 30% Discount On Your First Order</h2>
+    <p class="mb-6">Enjoy your favorite meals at an amazing price. Limited time offer!</p>
+    <button
+      class="bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition transform hover:scale-105">
+      Order Now
+    </button>
   </section>
 
   <!-- ================= REVIEWS ================= -->

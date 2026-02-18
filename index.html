@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FoodieHub</title>
 
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Font Awesome CDN -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-900 font-sans transition duration-300">
@@ -29,615 +29,357 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-8 text-gray-600 dark:text-gray-300">
-
-        <a href="#home" class="hover:text-orange-500">Home</a>
+        <a href="#home" class="hover:text-orange-500 transition">Home</a>
 
         <!-- Dropdown -->
         <div class="relative group">
-          <button class="hover:text-orange-500">Our Services ▾</button>
-
-          <div class="absolute hidden group-hover:block bg-white dark:bg-gray-800 shadow-lg rounded-lg mt-2 w-40">
+          <button class="hover:text-orange-500 transition">Our Services ▾</button>
+          <div class="absolute hidden group-hover:block bg-white dark:bg-gray-800 shadow-lg rounded-lg mt-2 w-40 transition">
             <a href="#pizza" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Pizza</a>
             <a href="#burger" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Burger</a>
             <a href="#momos" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Momos</a>
           </div>
         </div>
 
-        <a href="#reviews" class="hover:text-orange-500">Reviews</a>
-        <a href="#about" class="hover:text-orange-500">About Us</a>
-        <a href="#contact" class="hover:text-orange-500">Contact Us</a>
+        <a href="#reviews" class="hover:text-orange-500 transition">Reviews</a>
+        <a href="#about" class="hover:text-orange-500 transition">About Us</a>
+        <a href="#contact" class="hover:text-orange-500 transition">Contact Us</a>
       </div>
 
       <!-- Right Side -->
       <div class="flex items-center space-x-4">
-
         <!-- Dark Mode Toggle -->
-        <button onclick="toggleDarkMode()" id="themeIcon"
-          class="text-xl dark:text-white">
-          🌙
-        </button>
+        <button onclick="toggleDarkMode()" id="themeIcon" class="text-xl dark:text-white">🌙</button>
 
         <!-- Login -->
-        <button class="hidden md:block bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">
+        <button class="hidden md:block bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
           LOGIN
         </button>
 
         <!-- Mobile Menu -->
-        <button onclick="toggleMenu()" class="md:hidden text-2xl dark:text-white">
-          ☰
-        </button>
-
+        <button onclick="toggleMenu()" class="md:hidden text-2xl dark:text-white">☰</button>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu"
-      class="hidden md:hidden bg-white dark:bg-gray-900 px-6 py-4 space-y-4 text-gray-600 dark:text-gray-300">
-
-      <a href="home" class="block">Home</a>
-
-      <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-900 px-6 py-4 space-y-4 text-gray-600 dark:text-gray-300">
+      <a href="#home" class="block">Home</a>
       <div>
-        <button onclick="toggleDropdown()" class="w-full text-left">
-          Our Services ▾
-        </button>
-
+        <button onclick="toggleDropdown()" class="w-full text-left">Our Services ▾</button>
         <div id="mobileDropdown" class="hidden pl-4 mt-2 space-y-2">
-          <a href="#" class="block">Pizza</a>
-          <a href="#" class="block">Burger</a>
-          <a href="#" class="block">Momos</a>
+          <a href="#pizza" class="block">Pizza</a>
+          <a href="#burger" class="block">Burger</a>
+          <a href="#momos" class="block">Momos</a>
         </div>
       </div>
-
-      <a href="reviews" class="block">Reviews</a>
-      <a href="contact" class="block">Contact Us</a>
-
-      <button class="w-full bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-500">
+      <a href="#reviews" class="block">Reviews</a>
+      <a href="#about" class="block">About Us</a>
+      <a href="#contact" class="block">Contact Us</a>
+      <button class="w-full bg-yellow-400 px-4 py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
         LOGIN
       </button>
     </div>
   </nav>
 
-
   <!-- ================= HERO ================= -->
   <section id="home" class="max-w-7xl mx-auto grid md:grid-cols-2 items-center px-6 py-16 gap-10">
-
-    <div>
+    <div data-aos="fade-right">
       <h2 class="text-3xl font-bold mb-4 dark:text-white">
-        Freshly Baked Pizza, full of flavor
+        <span id="typing"></span>
       </h2>
       <p class="text-gray-600 dark:text-gray-300 mb-6">
         Delicious pizza made with fresh ingredients and authentic taste.
       </p>
-
-      <button class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition">
+      <button class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 
+                      hover:scale-105 transform transition duration-500 ease-in-out">
         Order Pizza Now
       </button>
     </div>
 
-    <div>
-      <img src="image/Hero-pizza.webp" alt="Freshly baked pizza"
-        class="rounded-3xl shadow-xl w-full">
+    <div data-aos="fade-left">
+      <img src="image/Hero-pizza.webp" alt="Freshly baked pizza" class="rounded-3xl shadow-xl w-full transform hover:scale-105 transition duration-500">
     </div>
-
   </section>
 
-
   <!-- ================= FOOD CATEGORIES ================= -->
-<section id="categories" class="py-16 bg-gray-100 dark:bg-gray-900">
-
-  <div class="max-w-6xl mx-auto px-6">
-
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-red-500">
-        Our Popular Categories
-      </h2>
+  <section id="categories" class="py-16 bg-gray-100 dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-red-500" data-aos="fade-up">Our Popular Categories</h2>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 text-center">
+        <!-- Item 1 -->
+        <div class="group" data-aos="zoom-in">
+          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-110 transform transition duration-500">
+            <img src="image/Hero-pizza.webp" alt="Pizza" class="w-full h-full object-cover">
+          </div>
+          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Pizza</h4>
+        </div>
+        <!-- Item 2 -->
+        <div class="group" data-aos="zoom-in" data-aos-delay="100">
+          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-110 transform transition duration-500">
+            <img src="image/Burger.webp" alt="Burger" class="w-full h-full object-cover">
+          </div>
+          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Burger</h4>
+        </div>
+        <!-- Item 3 -->
+        <div class="group" data-aos="zoom-in" data-aos-delay="200">
+          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-110 transform transition duration-500">
+            <img src="image/Momos.webp" alt="Momos" class="w-full h-full object-cover">
+          </div>
+          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Momos</h4>
+        </div>
+        <!-- Item 4 -->
+        <div class="group" data-aos="zoom-in" data-aos-delay="300">
+          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-110 transform transition duration-500">
+            <img src="image/Fries.webp" alt="Fries" class="w-full h-full object-cover">
+          </div>
+          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Fries</h4>
+        </div>
+        <!-- Item 5 -->
+        <div class="group" data-aos="zoom-in" data-aos-delay="400">
+          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-110 transform transition duration-500">
+            <img src="image/Drinks.webp" alt="Drinks" class="w-full h-full object-cover">
+          </div>
+          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Drinks</h4>
+        </div>
+        <!-- Item 6 -->
+        <div class="group" data-aos="zoom-in" data-aos-delay="500">
+          <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-110 transform transition duration-500">
+            <img src="image/Desserts.webp" alt="Desserts" class="w-full h-full object-cover">
+          </div>
+          <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500 transition">Desserts</h4>
+        </div>
+      </div>
     </div>
-
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 text-center">
-
-     <!-- Item 1 -->
-<div class="group">
-  <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-105 transition duration-300">
-    <img src="image/Hero-pizza.webp" alt="Pizza" 
-         class="w-full h-full object-cover">
-  </div>
-  <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500">
-    Pizza
-  </h4>
-</div>
-
-<!-- Item 2 -->
-<div class="group">
-  <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-105 transition duration-300">
-    <img src="image/Burger.webp" alt="Burger"
-         class="w-full h-full object-cover">
-  </div>
-  <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500">
-    Burger
-  </h4>
-</div>
-
-<!-- Item 3 -->
-<div class="group">
-  <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-105 transition duration-300">
-    <img src="image/Momos.webp" alt="Momos"
-         class="w-full h-full object-cover">
-  </div>
-  <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500">
-    Momos
-  </h4>
-</div>
-
-
-  <!-- Item 4 -->
-<div class="group">
-  <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-105 transition duration-300">
-    <img src="image/Fries.webp" alt="Fries"
-         class="w-full h-full object-cover">
-  </div>
-  <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500">
-    Fries
-  </h4>
-</div>
-
-<!-- Item 5 -->
-<div class="group">
-  <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-105 transition duration-300">
-    <img src="image/Drinks.webp" alt="Drinks"
-         class="w-full h-full object-cover">
-  </div>
-  <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500">
-    Drinks
-  </h4>
-</div>
-
-<!-- Item 6 -->
-<div class="group">
-  <div class="w-28 h-28 mx-auto rounded-full overflow-hidden shadow-md hover:scale-105 transition duration-300">
-    <img src="image/Desserts.webp" alt="Desserts"
-         class="w-full h-full object-cover">
-  </div>
-  <h4 class="mt-4 font-semibold dark:text-white group-hover:text-orange-500">
-    Desserts
-  </h4>
-</div>
-
-
-</section>
-
-
+  </section>
 
   <!-- ================= ABOUT ================= -->
- <section id="about" class="py-20 bg-white dark:bg-gray-800">
-
-  <!-- Top Heading -->
-  <div class="text-center mb-14">
-    <h2 class="text-red-500 font-bold text-3xl">
-      About Us
-    </h2>
-  </div>
-
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
-    <!-- Left Image -->
-    <div>
-      <img src="image/About.burger.webp" alt="About Us"
-        class="rounded-2xl shadow-lg w-full">
+  <section id="about" class="py-20 bg-white dark:bg-gray-800">
+    <div class="text-center mb-14" data-aos="fade-up">
+      <h2 class="text-red-500 font-bold text-3xl">About Us</h2>
     </div>
-
-    <!-- Right Content -->
-    <div>
-      <h3 class="text-3xl font-bold mb-4 dark:text-white">
-        Pizza, Burger, and Fries
-      </h3>
-
-      <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-        High quality food delivered with care and hygiene.
-        We provide the best taste with premium ingredients.
-        Our chefs prepare every meal with passion and perfection.
-      </p>
-
-      <button class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition">
-        Learn More
-      </button>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ================= SERVICES ================= -->
-<section id="services" class="py-16 bg-gray-100 dark:bg-gray-900">
-  <h2 class="text-center text-red-500 font-bold text-3xl mb-12">
-    Our Services
-  </h2>
-
-  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-
-    <!-- Card 1 -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
-
-      <img src="image/Burger.webp" alt="Cheese Burger"
-        class="rounded-xl mb-4 w-full h-56 object-cover">
-
-      <h3 class="text-xl font-semibold dark:text-white mb-2">
-        Cheese Burger
-      </h3>
-
-      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-        Juicy grilled burger with fresh vegetables and premium cheese.
-      </p>
-
-      <button class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition">
-        Order Now
-      </button>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
-
-      <img src="image/Hero-pizza.webp" alt="Freshly baked pizza"
-        class="rounded-xl mb-4 w-full h-56 object-cover">
-
-      <h3 class="text-xl font-semibold dark:text-white mb-2">
-        Freshly Pizza
-      </h3>
-
-      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-        Hot and crispy pizza topped with fresh ingredients and cheese.
-      </p>
-
-      <button class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition">
-        Order Now
-      </button>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition">
-
-      <img src="image/Momos.webp" alt="Steamed Momos"
-        class="rounded-xl mb-4 w-full h-56 object-cover">
-
-      <h3 class="text-xl font-semibold dark:text-white mb-2">
-        Steamed Momos
-      </h3>
-
-      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
-        Soft and delicious momos served with spicy special sauce.
-      </p>
-
-      <button class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition">
-        Order Now
-      </button>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-<!-- ================= WHY CHOOSE US ================= -->
-<section id="why-choose-us" class="py-20 bg-white dark:bg-gray-800">
-  <h2 class="text-center text-red-500 font-bold text-3xl mb-12">
-    Why Choose Us
-  </h2>
-
-  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 text-center">
-
-    <div class="p-6">
-      <div class="text-5xl mb-4">🍔</div>
-      <h3 class="text-xl font-semibold dark:text-white mb-2">
-        Fresh Ingredients
-      </h3>
-      <p class="text-gray-600 dark:text-gray-300 text-sm">
-        We use only high-quality and fresh ingredients in every meal.
-      </p>
-    </div>
-
-    <div class="p-6">
-      <div class="text-5xl mb-4">🚚</div>
-      <h3 class="text-xl font-semibold dark:text-white mb-2">
-        Fast Delivery
-      </h3>
-      <p class="text-gray-600 dark:text-gray-300 text-sm">
-        Get your food delivered quickly and safely at your doorstep.
-      </p>
-    </div>
-
-    <div class="p-6">
-      <div class="text-5xl mb-4">⭐</div>
-      <h3 class="text-xl font-semibold dark:text-white mb-2">
-        Best Quality
-      </h3>
-      <p class="text-gray-600 dark:text-gray-300 text-sm">
-        Our chefs prepare every dish with care and perfection.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-<!-- ================= SPECIAL OFFER ================= -->
-<section id="special-offer" class="py-20 bg-orange-500 text-white text-center">
-  <h2 class="text-3xl font-bold mb-4">
-    Get 30% Discount On Your First Order
-  </h2>
-
-  <p class="mb-6">
-    Enjoy your favorite meals at an amazing price. Limited time offer!
-  </p>
-
-  <button class="bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
-    Order Now
-  </button>
-</section>
-
-
-<!-- ================= REVIEWS ================= -->
-<section id="reviews" class="py-20 bg-gray-100 dark:bg-gray-900">
-
-  <h2 class="text-center text-red-500 font-bold text-3xl mb-12">
-    What Our Customers Say
-  </h2>
-
-  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-
-    <!-- Review Card 1 -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-
-      <div class="flex items-center mb-4">
-        <img src="image/avatar-icon.webp" alt="Customer Avatar"
-          class="w-14 h-14 rounded-full mr-4 object-cover">
-
-        <div>
-          <h4 class="font-semibold dark:text-white">
-            Aman Kumar
-          </h4>
-          <div class="text-yellow-400 text-sm">
-            ★★★★★
-          </div>
-        </div>
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <img src="image/About.burger.webp" alt="About Us" class="rounded-2xl shadow-lg w-full">
       </div>
-
-      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-        The food was absolutely delicious and delivered very quickly.
-        I really loved the burger and pizza quality.
-      </p>
-
-    </div>
-
-    <!-- Review Card 2 -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-
-      <div class="flex items-center mb-4">
-        <img src="image/avatar-icon.webp" alt="Customer Avatar"
-          class="w-14 h-14 rounded-full mr-4 object-cover">
-
-        <div>
-          <h4 class="font-semibold dark:text-white">
-            Rajat Choudhary
-          </h4>
-          <div class="text-yellow-400 text-sm">
-            ★★★★★
-          </div>
-        </div>
-      </div>
-
-      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-        Very hygienic packaging and amazing taste.
-        Highly recommend FoodieHub services.
-      </p>
-
-    </div>
-
-    <!-- Review Card 3 -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-
-      <div class="flex items-center mb-4">
-        <img src="image/avatar-icon.webp" alt="Customer Avatar"
-          class="w-14 h-14 rounded-full mr-4 object-cover">
-
-        <div>
-          <h4 class="font-semibold dark:text-white">
-            Rahul Sharma
-          </h4>
-          <div class="text-yellow-400 text-sm">
-            ★★★★★
-          </div>
-        </div>
-      </div>
-
-      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-        Best food delivery experience so far.
-        Fast service and great customer support.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="py-20 bg-white dark:bg-gray-800">
-
-  <div class="max-w-6xl mx-auto px-6">
-
-    <!-- Heading -->
-    <div class="text-center mb-14">
-      <h2 class="text-3xl font-bold text-red-500 mb-4">
-        Contact Us
-      </h2>
-      <p class="text-gray-600 dark:text-gray-300">
-        Feel free to contact us anytime. We will get back to you as soon as possible.
-      </p>
-    </div>
-
-    <!-- Grid -->
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-
-      <!-- Left Info -->
-      <div class="space-y-6">
-
-        <div>
-          <h3 class="text-xl font-semibold dark:text-white mb-2">
-            Address
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300">
-           Himachal Pradesh, India
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold dark:text-white mb-2">
-            Phone
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            +91 8894435516
-          </p>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold dark:text-white mb-2">
-            Email
-          </h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            amankumar06052000@gmail.com
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Right Form -->
-      <form class="bg-gray-100 dark:bg-gray-900 p-8 rounded-2xl shadow-lg space-y-6">
-
-        <div>
-          <input type="text" placeholder="Your Name"
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-gray-800 dark:text-white">
-        </div>
-
-        <div>
-          <input type="email" placeholder="Your Email"
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-gray-800 dark:text-white">
-        </div>
-
-        <div>
-          <textarea rows="4" placeholder="Your Message"
-            class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-gray-800 dark:text-white"></textarea>
-        </div>
-
-        <button type="submit"
-          class="w-full bg-orange-500 text-white py-3 rounded-full font-semibold hover:bg-orange-600 transition">
-          Send Message
+      <div data-aos="fade-left">
+        <h3 class="text-3xl font-bold mb-4 dark:text-white">Pizza, Burger, and Fries</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+          High quality food delivered with care and hygiene.
+          We provide the best taste with premium ingredients.
+          Our chefs prepare every meal with passion and perfection.
+        </p>
+        <button class="bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
+          Learn More
         </button>
-
-      </form>
-
+      </div>
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-
-
-
-
-<!-- ================= FOOTER ================= -->
-<footer class="bg-gray-100 dark:bg-gray-900 pt-16 pb-8">
-
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-
-    <!-- About -->
-    <div>
-      <h3 class="text-xl font-bold text-orange-500 mb-4">
-        FoodieHub
-      </h3>
-      <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-        We provide fresh and delicious food with fast delivery service.
-        Quality and hygiene are our top priorities.
-      </p>
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="py-16 bg-gray-100 dark:bg-gray-900">
+    <h2 class="text-center text-red-500 font-bold text-3xl mb-12" data-aos="fade-up">Our Services</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+      <!-- Card 1 -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up">
+        <img src="image/Burger.webp" alt="Cheese Burger" class="rounded-xl mb-4 w-full h-56 object-cover">
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Cheese Burger</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+          Juicy grilled burger with fresh vegetables and premium cheese.
+        </p>
+        <button class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
+          Order Now
+        </button>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+        <img src="image/Hero-pizza.webp" alt="Freshly baked pizza" class="rounded-xl mb-4 w-full h-56 object-cover">
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Freshly Pizza</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+          Hot and crispy pizza topped with fresh ingredients and cheese.
+        </p>
+        <button class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
+          Order Now
+        </button>
+      </div>
+      <!-- Card 3 -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+        <img src="image/Momos.webp" alt="Steamed Momos" class="rounded-xl mb-4 w-full h-56 object-cover">
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Steamed Momos</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+          Soft and delicious momos served with spicy special sauce.
+        </p>
+        <button class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition transform hover:scale-105">
+          Order Now
+        </button>
+      </div>
     </div>
+  </section>
 
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4 text-orange-500 dark:text-white">
-        Quick Links
-      </h3>
-      <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
-        <li><a href="#home" class="hover:text-orange-500">Home</a></li>
-        <li><a href="#about" class="hover:text-orange-500">About</a></li>
-        <li><a href="#services" class="hover:text-orange-500">Services</a></li>
-        <li><a href="#contact" class="hover:text-orange-500">Contact</a></li>
-      </ul>
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section id="why-choose-us" class="py-20 bg-white dark:bg-gray-800">
+    <h2 class="text-center text-red-500 font-bold text-3xl mb-12" data-aos="fade-up">Why Choose Us</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6 text-center">
+      <div class="p-6" data-aos="fade-up">
+        <div class="text-5xl mb-4">🍔</div>
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Fresh Ingredients</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">We use only high-quality and fresh ingredients in every meal.</p>
+      </div>
+      <div class="p-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="text-5xl mb-4">🚚</div>
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Fast Delivery</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Get your food delivered quickly and safely at your doorstep.</p>
+      </div>
+      <div class="p-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="text-5xl mb-4">⭐</div>
+        <h3 class="text-xl font-semibold dark:text-white mb-2">Best Quality</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm">Our chefs prepare every dish with care and perfection.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Contact Info -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4 text-orange-500 dark:text-white">
-        Contact Info
-      </h3>
-      <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
-        <li>📍 Himachal Pradesh, India</li>
-        <li>📞 +91 8894435516</li>
-        <li>✉ amankumar06052000@gmail.com</li>
-      </ul>
+  <!-- ================= SPECIAL OFFER ================= -->
+  <section id="special-offer" class="py-20 bg-orange-500 text-white text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Get 30% Discount On Your First Order</h2>
+    <p class="mb-6">Enjoy your favorite meals at an amazing price. Limited time offer!</p>
+    <button class="bg-white text-orange-500 px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition transform hover:scale-105">
+      Order Now
+    </button>
+  </section>
 
-     <!-- Social Icons -->
-<div class="flex space-x-4 mt-4">
-
-  <a href="https://www.linkedin.com" target="_blank"
-     class="text-gray-600 dark:text-gray-300 text-xl 
-            hover:text-orange-500 hover:scale-110 transition duration-300">
-    <i class="fab fa-linkedin"></i>
-  </a>
-
-  <a href="https://www.facebook.com" target="_blank"
-     class="text-gray-600 dark:text-gray-300 text-xl 
-            hover:text-orange-500 hover:scale-110 transition duration-300">
-    <i class="fab fa-facebook"></i>
-  </a>
-
-  <a href="https://wa.me/918894435516" target="_blank"
-     class="text-gray-600 dark:text-gray-300 text-xl 
-            hover:text-orange-500 hover:scale-110 transition duration-300">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-</div>
-
+  <!-- ================= REVIEWS ================= -->
+  <section id="reviews" class="py-20 bg-gray-100 dark:bg-gray-900">
+    <h2 class="text-center text-red-500 font-bold text-3xl mb-12" data-aos="fade-up">What Our Customers Say</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
+      <!-- Review Card 1 -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up">
+        <div class="flex items-center mb-4">
+          <img src="image/avatar-icon.webp" alt="Customer Avatar" class="w-14 h-14 rounded-full mr-4 object-cover">
+          <div>
+            <h4 class="font-semibold dark:text-white">Aman Kumar</h4>
+            <div class="text-yellow-400 text-sm">★★★★★</div>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+          The food was absolutely delicious and delivered very quickly. I really loved the burger and pizza quality.
+        </p>
+      </div>
+      <!-- Review Card 2 -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center mb-4">
+          <img src="image/avatar-icon.webp" alt="Customer Avatar" class="w-14 h-14 rounded-full mr-4 object-cover">
+          <div>
+            <h4 class="font-semibold dark:text-white">Rajat Choudhary</h4>
+            <div class="text-yellow-400 text-sm">★★★★★</div>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+          Very hygienic packaging and amazing taste. Highly recommend FoodieHub services.
+        </p>
+      </div>
+      <!-- Review Card 3 -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:scale-105" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center mb-4">
+          <img src="image/avatar-icon.webp" alt="Customer Avatar" class="w-14 h-14 rounded-full mr-4 object-cover">
+          <div>
+            <h4 class="font-semibold dark:text-white">Rahul Sharma</h4>
+            <div class="text-yellow-400
+                        <div class="text-yellow-400 text-sm">★★★★★</div>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+          Best food delivery experience so far. Fast service and great customer support.
+        </p>
+      </div>
     </div>
+  </section>
 
-    <!-- Google Map -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4 text-orange-500 dark:text-white">
-        Our Location
-      </h3>
-
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12849.367131557014!2d76.37218945473954!3d32.10818698320107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b4c317292f6d5%3A0x7986b64ab27a0248!2sNagrota%20Bagwan%2C%20Himachal%20Pradesh%20176047!5e1!3m2!1sen!2sin!4v1771400255256!5m2!1sen!2sin"
-        width="100%" height="150" style="border:0;" allowfullscreen=""
-        loading="lazy"
-        class="rounded-lg">
-      </iframe>
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-red-500 mb-4">Contact Us</h2>
+        <p class="text-gray-600 dark:text-gray-300">Feel free to contact us anytime. We will get back to you as soon as possible.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Info -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold dark:text-white mb-2">Address</h3>
+            <p class="text-gray-600 dark:text-gray-300">Himachal Pradesh, India</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold dark:text-white mb-2">Phone</h3>
+            <p class="text-gray-600 dark:text-gray-300">+91 8894435516</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold dark:text-white mb-2">Email</h3>
+            <p class="text-gray-600 dark:text-gray-300">amankumar06052000@gmail.com</p>
+          </div>
+        </div>
+        <!-- Right Form -->
+        <form class="bg-gray-100 dark:bg-gray-900 p-8 rounded-2xl shadow-lg space-y-6" data-aos="fade-left">
+          <div><input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-gray-800 dark:text-white"></div>
+          <div><input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-gray-800 dark:text-white"></div>
+          <div><textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-gray-800 dark:text-white"></textarea></div>
+          <button type="submit" class="w-full bg-orange-500 text-white py-3 rounded-full font-semibold hover:bg-orange-600 transition transform hover:scale-105">Send Message</button>
+        </form>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-gray-100 dark:bg-gray-900 pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+      <!-- About -->
+      <div>
+        <h3 class="text-xl font-bold text-orange-500 mb-4">FoodieHub</h3>
+        <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">We provide fresh and delicious food with fast delivery service. Quality and hygiene are our top priorities.</p>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-orange-500 dark:text-white">Quick Links</h3>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+          <li><a href="#home" class="hover:text-orange-500 transition">Home</a></li>
+          <li><a href="#about" class="hover:text-orange-500 transition">About</a></li>
+          <li><a href="#services" class="hover:text-orange-500 transition">Services</a></li>
+          <li><a href="#contact" class="hover:text-orange-500 transition">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-orange-500 dark:text-white">Contact Info</h3>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+          <li>📍 Himachal Pradesh, India</li>
+          <li>📞 +91 8894435516</li>
+          <li>✉ amankumar06052000@gmail.com</li>
+        </ul>
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-4">
+          <a href="https://www.linkedin.com" target="_blank" class="text-gray-600 dark:text-gray-300 text-xl hover:text-orange-500 hover:scale-110 transition duration-300"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com" target="_blank" class="text-gray-600 dark:text-gray-300 text-xl hover:text-orange-500 hover:scale-110 transition duration-300"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/918894435516" target="_blank" class="text-gray-600 dark:text-gray-300 text-xl hover:text-orange-500 hover:scale-110 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <!-- Google Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 text-orange-500 dark:text-white">Our Location</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12849.367131557014!2d76.37218945473954!3d32.10818698320107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b4c317292f6d5%3A0x7986b64ab27a0248!2sNagrota%20Bagwan%2C%20Himachal%20Pradesh%20176047!5e1!3m2!1sen!2sin!4v1771400255256!5m2!1sen!2sin" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
+      </div>
+    </div>
+    <div class="border-t border-gray-300 dark:border-gray-700 mt-10 pt-6 text-center text-gray-600 dark:text-gray-400 text-sm">
+      © 2025 FoodieHub. All Rights Reserved.
+    </div>
+  </footer>
 
-  <!-- Bottom Line -->
-  <div class="border-t border-gray-300 dark:border-gray-700 mt-10 pt-6 text-center text-gray-600 dark:text-gray-400 text-sm">
-    © 2025 FoodieHub. All Rights Reserved.
-  </div>
+  <!-- ================= SCRIPTS ================= -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-</footer>
-
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="main.js"></script>
 
 </body>
 </html>
+

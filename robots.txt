@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amankumar06052000.github.io/FoodieHub/sitemap.xml
